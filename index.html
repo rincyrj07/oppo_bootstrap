@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sticky-footer/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  </head>
+  <body>
+
+    
+      <nav class="navbar navbar-expand-lg bg-body-white">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="85" height="22" viewBox="0 0 85 22" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0905 13.7856H10.0898H10.0888C5.80572 13.7403 3.03806 11.7032 3.03806 8.59604C3.03806 5.48888 5.80572 3.45175 10.0888 3.40651C14.3738 3.45175 17.1411 5.48888 17.1411 8.59604C17.1411 11.7032 14.3738 13.7403 10.0905 13.7856ZM10.2155 0.898183C10.2144 0.89832 10.1292 0.896816 10.0863 0.895996C10.0424 0.896543 9.95715 0.898183 9.95715 0.898183C4.09395 0.993718 0 4.1591 0 8.5961C0 13.0331 4.09395 16.1986 9.95578 16.294C9.95578 16.294 10.0424 16.2948 10.0851 16.2946C10.1299 16.295 10.2157 16.294 10.2157 16.294C16.0774 16.1986 20.1712 13.0331 20.1712 8.5961C20.1712 4.1591 16.0774 0.993718 10.2155 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M74.9195 13.7856H74.9188H74.9177C70.6348 13.7403 67.8671 11.7032 67.8671 8.59604C67.8671 5.48888 70.6348 3.45175 74.9177 3.40651C79.2027 3.45175 81.9701 5.48888 81.9701 8.59604C81.9701 11.7032 79.2027 13.7403 74.9195 13.7856ZM75.0445 0.898183C75.0434 0.89832 74.9584 0.896816 74.9152 0.895996C74.8715 0.896543 74.7862 0.898183 74.7862 0.898183C68.923 0.993718 64.829 4.1591 64.829 8.5961C64.829 13.0331 68.923 16.1986 74.785 16.294C74.785 16.294 74.8715 16.2948 74.9141 16.2946C74.9591 16.295 75.0448 16.294 75.0448 16.294C80.9065 16.1986 85.0003 13.0331 85.0003 8.5961C85.0003 4.1591 80.9065 0.993718 75.0445 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M53.3494 13.7856H53.3487H53.3477C49.0648 13.7403 46.2971 11.7032 46.2971 8.59604C46.2971 5.48888 49.0648 3.45175 53.3477 3.40651C57.6326 3.45175 60.4001 5.48888 60.4001 8.59604C60.4001 11.7032 57.6326 13.7403 53.3494 13.7856ZM53.4745 0.898183C53.4734 0.89832 53.3884 0.896816 53.3452 0.895996C53.3015 0.896543 53.2162 0.898183 53.2162 0.898183C50.423 0.943695 48.032 1.68638 46.2932 2.93081V1.61846H43.2591V21.1043H46.2932V14.2617C48.0317 15.506 50.4223 16.2486 53.2149 16.294C53.2151 16.2942 53.3015 16.2948 53.344 16.2946C53.3891 16.295 53.4747 16.294 53.4747 16.294C59.3364 16.1986 63.4303 13.0331 63.4303 8.5961C63.4303 4.1591 59.3364 0.993718 53.4745 0.898183Z" fill="black" class="fill"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M31.7169 13.7856H31.7162H31.7154C27.4323 13.7403 24.6646 11.7032 24.6646 8.59604C24.6646 5.48888 27.4323 3.45175 31.7154 3.40651C36.0003 3.45175 38.7677 5.48888 38.7677 8.59604C38.7677 11.7032 36.0003 13.7403 31.7169 13.7856ZM31.8472 0.898183C31.8459 0.89832 31.7609 0.896816 31.7179 0.895996C31.674 0.896543 31.5887 0.898183 31.5887 0.898183C28.7955 0.943695 26.4045 1.68638 24.6657 2.93081V1.61846H21.6317V21.1043H24.6657V14.2617C26.4044 15.506 28.7949 16.2486 31.5873 16.294C31.5873 16.294 31.674 16.2948 31.7166 16.2946C31.7616 16.295 31.8473 16.294 31.8473 16.294C37.709 16.1986 41.8028 13.0331 41.8028 8.5961C41.8028 4.1591 37.709 0.993718 31.8472 0.898183Z" fill="black" class="fill"></path></svg></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Smartphones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Tablets</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Audio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Wearables</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Accessories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About OPPO</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item position-relative">
+                     <input type="text" class="header-search" placeholder="Search OPPO.com">
+                     <i class="fas fa-search search-icon-header"></i>
+                </li>
+                <li class="nav-item">
+                     <a href="#" class="nav-link">
+                     <i class="fas fa-user-circle"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <i class="fas fa-cart-arrow-down"></i>
+                    </a>
+                </li>
+             </ul>
+            </span>
+          </div>
+        </div>
+      </nav>
+     <div class="container-fluid">
+         <div class="row">
+            <div class="col-12">
+              <div class="banner-top">
+                <picture>
+                  <source type="image/webp" srcset="https://www.oppo.com/content/dam/oppo/in/mkt/homepage/in-top-banner/reno10/v2/reno10-720_1060.jpg.thumb.webp" media="(max-width: 650px)">
+                  <source srcset="https://www.oppo.com/content/dam/oppo/in/mkt/homepage/in-top-banner/reno10/v2/reno10-720_1060.jpg" media="(max-width: 650px)">
+                  <source type="image/webp" srcset="https://www.oppo.com/content/dam/oppo/in/mkt/homepage/in-top-banner/reno10/v2/reno10-1536_800.jpg.thumb.webp" media="(max-width: 1439px)">
+                  <source srcset="https://www.oppo.com/content/dam/oppo/in/mkt/homepage/in-top-banner/reno10/v2/reno10-1536_800.jpg" media="(max-width: 1439px)">
+                  
+                  <img class="hero-banner-img-bg" src="//image.oppo.com/content/dam/oppo/in/mkt/homepage/in-top-banner/reno10/v2/reno10-5120x1280.jpg" alt="OPPO Reno10 <sup>5G</sup>" src-webp="true">
+                </picture>
+                <div class="banner-top-caption-wrapper">
+                  <div class="banner-top-cap1">
+                    <h1>
+                      OPPO Reno10 <sup>5G</sup>
+                    </h1>
+                    <h2>
+                      The Portrait Expert
+                    </h2>
+                  </div>
+                  <div class="banner-top-cap2">
+                    <h5>
+                      32MP Telephoto Portrait Camera
+                    </h5 >
+                    <a href="#" class="top-banner-buy-button">Buy now</a>
+                    <a href="#" class="top-banner-learn-button">Learn more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         </div>
+     </div>
+
+     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    
+<header>
+  
+  
+</header>
+
+<main>
+
+  <section >
+    
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://image.oppo.com/content/dam/oppo/common/mkt/v2-2/a78-en/middlebanner/a78-640_640-green.png.thumb.webp">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+               
+            <div class="card-body">
+              <p class="card-text">
+                <h4>OPPO A78 5G</h4><br>
+                <h6>1000 Membership Level Coupen</h6><br>
+            
+                Rs 18999 
+                <span style="text-decoration: line-through; color: gray;"> 21999 </span>
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://image.oppo.com/content/dam/oppo/common/mkt/v2-2/reno10-5g-en/feature/reno10-5g-640_640-blue.png.thumb.webp">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="https://image.oppo.com/content/dam/oppo/common/mkt/v2-2/reno10-5g-en/feature/reno10-5g-640_640-blue.png.thumb.webp" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img src >
+            <div class="card-body">
+              <p class="card-text">
+                <h4>OPPO A17</h4><br>
+                <h6>1000 Membership Level Coupen</h6><br>
+                Rs 11999 
+                <span style="text-decoration: line-through; color: gray;">Rs 14999 </span>
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://image.oppo.com/content/dam/oppo/common/mkt/v2-2/find-x5-en/middlebanner/find-x5-640x640.png.thumb.webp">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+
+            <div class="card-body">
+              <p class="card-text">
+                <h4>OPPO A17K</h4><br>
+                <h6>1000 Membership Level Coupen</h6><br>
+                Rs 9499
+                <span style="text-decoration: line-through; color: gray;"> Rs 12999</span>
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"></button>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>      
+
+
+
+
+     
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header>
+ <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">-->
+    <div class="container-fluid" style="padding-top: 50px;">
+     <!--<a class="navbar-brand" href="#">Carousel</a>--> 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://image.oppo.com/content/dam/oppo/in/mkt/smartphone/series-image/v2/series-Reno.jpg.thumb.webp">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>OPPO Reno Series</h1>
+            <p>The portrait expert</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.oppo.com/content/dam/oppo-campaign-site/in/events/store-opening/diwali2023/0925/kv-pc-v1.jpg.thumb.webp">
+       <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1> OPPO Pre-Diwali Bonanza! </h1>
+            <p>Grab Early Bird Deals and Exclusive Offers!</p>
+            <p>26th Sept. - 10th Oct.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://image.oppo.com/content/dam/oppo/in/mkt/accessories/banner/audio-banner.jpg">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Audio Limited Time Sale</h1>
+            <p>Weekly Specials upto 55% off</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+        
+     
+      </div>
+    </div>
+  </div>
+
+</main>>
+
+
+<span class="span-or"></span>
+<hr class="hr-or">
+<hr class="hr-or">
+<footer class="nb-footer">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="about">
+</div>
+</div>
+
+
+
+
+<div class="col-md-3 col-sm-6">
+<div class="footer-info-single">
+	<h2 class="title">Smartphones</h2>
+	<ul class="list-unstyled">
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> OPPO Find N2 Flip</a></li>
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> OPPO Reno10</a></li>
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> OPPO Reno10 5G</a></li>
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> OPPO A78</a></li>
+	</ul>
+</div>
+</div>
+
+<div class="col-md-3 col-sm-6">
+<div class="footer-info-single">
+	<h2 class="title">IoT Products</h2>
+	<ul class="list-unstyled">
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> OPPO Pad Air</a></li>
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> OPPO Enco Air3</a></li>
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> OPPO Watch Free</a></li>
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> OPPO Enco Buds2 </a></li>
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> OPPO Band Style</a></li>
+	</ul>
+</div>
+</div>
+
+<div class="col-md-3 col-sm-6">
+<div class="footer-info-single">
+	<h2 class="title">Support</h2>
+	<ul class="list-unstyled">
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Service Center </a></li>
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Warrenty Policy</a></li>
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Investor</a></li>
+	</ul>
+</div>
+</div>
+
+<div class="col-md-3 col-sm-6">
+<div class="footer-info-single">
+	<h2 class="title"> About OPPO</h2>
+	<ul class="list-unstyled">
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Our Story</a></li>
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Campaign</a></li>
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Career</a></li>
+		<li><a href="http://www.nextbootstrap.com/" title=""><i class="fa fa-angle-double-right"></i> Store Locator</a></li>
+	</ul>
+	
+</div>
+</div>
+</div>
+</div>
+
+<section class="copyright">
+<div class="container">
+<div class="row">
+<div class="col-sm-6">
+<p>Copyright © 2017. Your Company.</p>
+</div>
+<div class="col-sm-6"></div>
+</div>
+</div>
+</section>
+</footer>
+
+    
+
+
+
+      
+  
+
+
+     
+
+          
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
